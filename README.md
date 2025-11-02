@@ -1,7 +1,5 @@
 <h1 align="center">ProtectThing</h1>
 
----
-
 Advanced and performant DDoS protection
 
 # License
