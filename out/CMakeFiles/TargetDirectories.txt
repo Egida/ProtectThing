@@ -1,0 +1,4 @@
+/Users/tristanshaw/Projects/ProtectThing/out/CMakeFiles/cJSON.dir
+/Users/tristanshaw/Projects/ProtectThing/out/CMakeFiles/ProtectThing.dir
+/Users/tristanshaw/Projects/ProtectThing/out/CMakeFiles/edit_cache.dir
+/Users/tristanshaw/Projects/ProtectThing/out/CMakeFiles/rebuild_cache.dir
