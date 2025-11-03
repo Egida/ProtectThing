@@ -12,8 +12,6 @@ Option ArgParse::parse(const int count, const char* args[]) {
     std::unordered_map<std::string, std::function<void(Option&, const std::string&)>> cli_flags = {
         {"--verbose", [](Option& opt, const std::string&) -> void { opt.verbose = true; }},
         {"-v", [](Option& opt, const std::string&) -> void { opt.verbose = true; }},
-        {"-b", [](Option& opt, const std::string& value) -> void { opt.bind = value; }},
-        {"--bind", [](Option& opt, const std::string& value) -> void { opt.bind = value; }},
         {
             "--license-warranty", [](Option&, const std::string&) -> void {
                 std::cout << license_warranty << std::endl;
@@ -46,14 +44,12 @@ Option ArgParse::parse(const int count, const char* args[]) {
 
     Option option = {
         .verbose = false,
-        .bind = "127.0.0.1:9595",
     };
 
     for(int i = 1; i < count; ++i) {
         std::string arg = args[i];
 
         if(arg[0] != '-') {
-            option.bind = arg;
             continue;
         }
 
@@ -61,11 +57,6 @@ Option ArgParse::parse(const int count, const char* args[]) {
         if(it == cli_flags.end()) {
             Logger::error("Unknown Option: " + arg, "Main");
             exit(1);
-        }
-
-        if(arg != "--bind" && arg != "-b") {
-            it->second(option, "");
-            continue;
         }
 
         if(i + 1 >= count) {

@@ -11,12 +11,14 @@ public:
         std::string name = "default";
         std::string protocol = "http";
         std::string hostname = "localhost";
+        std::string portal_bind = "127.0.0.1:9595";
         short port = 9595;
 
         [[nodiscard]] std::string format() const {
             return "Config { Name: " + name +
                    ", Protocol: " + protocol +
                    ", Hostname: " + hostname +
+                   ", Portal Bind: " + portal_bind +
                    ", Port: " + std::to_string(port) + " }";
         }
 

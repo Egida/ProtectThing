@@ -1,0 +1,7 @@
+{
+  "name": "demo_service",
+  "protocol": "http",
+  "hostname": "http://127.0.0.1",
+  "port": 8000,
+  "portal:bind": "127.0.0.1:9501"
+}

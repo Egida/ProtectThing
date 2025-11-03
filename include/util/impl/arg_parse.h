@@ -5,7 +5,6 @@
 
 struct Option {
     bool verbose;
-    std::string bind;
 };
 
 class ArgParse {

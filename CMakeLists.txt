@@ -13,6 +13,7 @@ target_include_directories(cJSON PUBLIC third_party/cJSON)
 file(GLOB_RECURSE SOURCES "src/**/*.cpp")
 
 add_executable(${PROJECT_NAME} src/main.cpp ${SOURCES})
+target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Werror)
 target_include_directories(${PROJECT_NAME} PRIVATE include)
 target_link_libraries(${PROJECT_NAME} PRIVATE
         cJSON
